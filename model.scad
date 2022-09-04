@@ -12,14 +12,14 @@ module rubber_band_clip(width) {
    }
 }
 
-module spring(length, width) {
+module spring(length, width, thickness) {
     union() {
         translate([-length/2-1.8,0,0]) spring_end(width);
         translate([length/2+1.8,0,0]) spring_end(width);
-        translate([-length/2,-1,0]) cube([length,2,width]);
-        translate([0,-2,0]) rubber_band_clip(width);
-        translate([-length/4,-2,0]) rubber_band_clip(width);
-        translate([length/4,-2,0]) rubber_band_clip(width);
+        translate([-length/2,-thickness/2,0]) cube([length,thickness,width]);
+        translate([0,-thickness,0]) rubber_band_clip(width);
+        translate([-length/4,-thickness,0]) rubber_band_clip(width);
+        translate([length/4,-thickness,0]) rubber_band_clip(width);
     }
 }
 
@@ -45,14 +45,15 @@ module end(length, width) {
 
 length = 100;
 width = 10;
+thickness = 3;
 
 //for(i = [0,90,180,270]) {
-//    rotate([0,0,i]) translate([-width/2,16.5,0]) rotate([0,90,0]) spring(length, width);    
+//    rotate([0,0,i]) translate([-width/2,16.5,0]) rotate([0,90,0]) spring(length, width, thickness);    
 //}
 
 //end(length, width);
 //translate([0,0,0]) rotate([180,0,0]) end(length, width);
 
-spring(length, width);
+spring(length, width, thickness);
 
 
