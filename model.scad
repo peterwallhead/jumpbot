@@ -43,7 +43,7 @@ module end(length, width) {
     }
 }
 
-length = 50;
+length = 100;
 width = 10;
 
 //for(i = [0,90,180,270]) {
@@ -51,8 +51,8 @@ width = 10;
 //}
 
 //end(length, width);
-translate([0,0,0]) rotate([180,0,0]) end(length, width);
+//translate([0,0,0]) rotate([180,0,0]) end(length, width);
 
-//spring(length, width);
+spring(length, width);
 
 
