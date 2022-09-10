@@ -34,7 +34,12 @@ module end(length, width) {
                 rotate([0,0,i]) translate([-width/2-10,-16.5,length/2+1.8])rotate([0,90,0]) cylinder(h=width+20,d=4.4,$fn=36);
             }
             for(i = [0,90,180,270]) {
-            rotate([0,0,i]) translate([-width/2-0.5,-16.5,length/2+1.8])   rotate([0,90,0]) cylinder(h=width+1,d=11,$fn=36);
+                rotate([0,0,i]) translate([-width/2-0.5,-16.5,length/2+1.8])   rotate([0,90,0]) cylinder(h=width+1,d=11,$fn=36);
+            }
+            
+            for(i = [0,90,180,270]) {
+                rotate([0,0,i]) translate([-14,-16.5,length/2+1.8])   rotate([0,90,0]) cylinder(h=6,d=6,$fn=36);
+                rotate([0,0,i]) translate([8,-16.5,length/2+1.8])   rotate([0,90,0]) cylinder(h=6,d=6,$fn=36);
             }
             
             
@@ -51,9 +56,9 @@ thickness = 3;
 //    rotate([0,0,i]) translate([-width/2,16.5,0]) rotate([0,90,0]) spring(length, width, thickness);    
 //}
 
-//end(length, width);
+end(length, width);
 //translate([0,0,0]) rotate([180,0,0]) end(length, width);
 
-spring(length, width, thickness);
+//spring(length, width, thickness);
 
 
